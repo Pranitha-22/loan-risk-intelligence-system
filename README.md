@@ -17,8 +17,7 @@ This project is an end-to-end Machine Learning system built in Google Colab that
 
 ## 🧠 ML Pipeline
 
-Data → Cleaning → Feature Engineering → Encoding → Scaling  
-→ Model Training → Evaluation → SHAP → Risk Segmentation → Deployment  
+Data → Cleaning → Feature Engineering → Encoding → Scaling → Model Training → Evaluation → SHAP → Risk Segmentation → Deployment  
 
 ---
 
@@ -28,6 +27,23 @@ Data → Cleaning → Feature Engineering → Encoding → Scaling
 - ROC-AUC: ~0.84  
 - Recall (Approved): ~0.98  
 - Recall (Rejected): ~0.58  
+
+---
+
+## 🧠 Explainable AI (SHAP)
+
+To make the model transparent and interpretable, SHAP (SHapley Additive Explanations) was used.
+
+- Identifies feature contributions to predictions  
+- Explains both global model behavior and individual predictions  
+- Improves trust in model decisions (important in financial applications)  
+
+### Key Insights:
+- Credit_History is the most influential feature  
+- Higher income increases approval probability  
+- Larger loan amounts can negatively impact approval  
+
+SHAP transforms the model from a black-box into an explainable decision system.
 
 ---
 
@@ -44,7 +60,7 @@ Data → Cleaning → Feature Engineering → Encoding → Scaling
 ## 📊 Test Data Insights
 
 - Total applicants: 367  
-- Missing values handled using mode and median  
+- Missing values handled using mode (categorical) and median (numerical)  
 
 ### Observations:
 - Income is right-skewed (most between ₹2K–₹6K)  
@@ -67,11 +83,11 @@ Data → Cleaning → Feature Engineering → Encoding → Scaling
 - Medium Risk → 0.4 – 0.75  
 - High Risk → < 0.4  
 
-| Risk Level | Count |
-|-----------|------|
-| Low Risk  | 80   |
-| Medium Risk | 226 |
-| High Risk | 61   |
+| Risk Level   | Count |
+|-------------|------|
+| Low Risk    | 80   |
+| Medium Risk | 226  |
+| High Risk   | 61   |
 
 ---
 
@@ -127,7 +143,6 @@ streamlit run app.py
 - Streamlit  
 
 ---
-
 
 ## ⭐ Summary
 
